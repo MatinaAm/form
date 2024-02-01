@@ -5,16 +5,15 @@ import { Flex, Table } from 'antd';
 import { toPersianDigits } from "../utils/helper";
 import { mockData } from "../utils/mock";
 import strings from "../utils/localization";
-import useColumnSearch from "./Search";
+import useColumnSearch from "../Component/Search";
 import { toast } from "react-toastify";
 import cardLogo from '../styles/card.PNG';
 
-
+// ================formatted data==with ====persianDigits ======
 const formattedData = mockData.map(item => {
   const formattedAge = item.amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   return { ...item, amount: toPersianDigits(formattedAge) };
 });
-
 
 const App = () => {
 
@@ -54,14 +53,11 @@ const App = () => {
           return (
             <>
               <CheckCircleOutlined
-
-
                 className="mr-5" style={{ color: "#017c0f", cursor: 'pointer' }}
               />
               <span className="mr-5">
                   {strings.successPay}
               </span>
-
             </>
 
           )
@@ -106,8 +102,7 @@ const App = () => {
   ];
   return (
     <>
-    <Table
-      // headerBg={'#3a3adb'}
+    <Table rowKey="trackId"
     columns={columns} dataSource={formattedData} pagination={formattedData?.length > 10}/>
       <p style={{direction:'rtl'}}>
          تعداد نتایج
@@ -115,8 +110,6 @@ const App = () => {
         </p>
     </>
   )
-
-
 };
 
 export default App;

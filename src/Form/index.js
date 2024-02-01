@@ -33,8 +33,9 @@ const ModalForm = () => {
   const showModal = () => {
     setOpen(true);
   };
-  const handleOk = () => {
 
+  // =============successful =====
+  const handleOk = () => {
     setConfirmLoading(true);
     setTimeout(() => {
       setOpen(false);
@@ -43,10 +44,13 @@ const ModalForm = () => {
     }, 2000);
   };
 
+  // ===========cancel button============
   const handleCancel = () => {
     setOpen(false);
+    reset()
   };
 
+  //  =============successful request=====
   const onSubmit = (data) => {
     console.log(data);
     toast.success(`${strings.submitPayment}`)
