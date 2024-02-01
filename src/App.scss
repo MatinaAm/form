@@ -15,7 +15,7 @@ $color-purple: #3a3adb;
 }
 
 .ant-modal-root .ant-modal {
-  top: 5% !important;
+  top: 2% !important;
 }
 
 .ant-modal-root .ant-modal {
@@ -126,7 +126,9 @@ textarea {
 
 @media only screen and (max-width: 900px) {
   .ant-modal .ant-modal-content {
-    height: 95vh !important;
-
+    height: 97vh !important;
+  }
+  .ant-modal-root .ant-modal {
+    top: 1% !important;
   }
 }
